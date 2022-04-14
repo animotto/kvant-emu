@@ -17,7 +17,7 @@ void cuu_dump(CUU **cuu, MZU **mzu) {
   
   olmp = malloc(5 * sizeof(BYTE));
   
-  printf("Level: %d\n\n[IP: %.4x (%.4x)]\n",
+  printf("Level: %d\n\n[IP: %.4lx (%.4x)]\n",
 	 (*cuu)->level, (*cuu)->ip - *mzu, *(*cuu)->ip);
   
   printf("[KOP: %x] [NOR: %x] [UTA: %x] [Smeshenie: %.2x]\n", (*cuu)->kop, (*cuu)->nor, (*cuu)->uta, (*cuu)->smeshenie);

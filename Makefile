@@ -1,10 +1,13 @@
+CC=gcc
+CFLAGS=-Wall
+
 default: emu
 
 emu: kvant.c emu.c
 	@echo "Make Kvant emulator"
-	gcc -Wall -c kvant.c
-	gcc -shared -o libkvant.so kvant.o
-	gcc -Wall -L. -lreadline -lkvant -o emu emu.c
+	$(CC) $(CFLAGS) -c kvant.c
+	$(CC) $(CFLAGS) -shared -o libkvant.so kvant.o
+	$(CC) $(CFLAGS) -o emu emu.c -L. -lkvant -lreadline
 	@echo "Done"
 
 clean:
